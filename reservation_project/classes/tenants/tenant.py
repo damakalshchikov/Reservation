@@ -23,7 +23,7 @@ class Tenant:
 
     @staticmethod
     def from_dict(data: dict) -> "Tenant":
-        """Создает объект Tenant из словаря"""
+        """Создаёт объект Tenant из словаря"""
         tenant = Tenant(
             first_name=data["first_name"],
             last_name=data["last_name"],
