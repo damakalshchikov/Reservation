@@ -5,19 +5,19 @@ class Tenant:
     """Класс, представляющий арендатора"""
 
     def __init__(self, first_name: str, last_name: str, age: int, phone_number: str):
-        self._first_name: str = first_name
-        self._last_name: str = last_name
-        self._age: int = age
-        self._phone_number: str = phone_number
+        self.first_name: str = first_name
+        self.last_name: str = last_name
+        self.age: int = age
+        self.phone_number: str = phone_number
         self._place_of_residence: None | Rentable = None
 
     def to_dict(self) -> dict:
         """Возвращает словарь с данными арендатора"""
         return {
-            "first_name": self._first_name,
-            "last_name": self._last_name,
-            "age": self._age,
-            "phone_number": self._phone_number,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "age": self.age,
+            "phone_number": self.phone_number,
             "place_of_residence": self._place_of_residence.to_dict() if self._place_of_residence else None,
         }
 
