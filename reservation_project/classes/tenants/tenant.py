@@ -5,10 +5,10 @@ from descriptors.tenant_descriptor import TenantDescriptor
 class Tenant:
     """Класс, представляющий арендатора"""
 
-    first_name = TenantDescriptor()
-    last_name = TenantDescriptor()
-    age = TenantDescriptor()
-    phone_number = TenantDescriptor()
+    first_name: TenantDescriptor = TenantDescriptor()
+    last_name: TenantDescriptor = TenantDescriptor()
+    age: TenantDescriptor = TenantDescriptor()
+    phone_number: TenantDescriptor = TenantDescriptor()
 
     def __init__(self, first_name: str, last_name: str, age: int, phone_number: str):
         self.first_name: str = first_name

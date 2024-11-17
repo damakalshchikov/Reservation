@@ -6,11 +6,11 @@ from descriptors.rental_descriptor import RentalDescriptor
 class Rentable(ABC):
     """Абстрактный класс, который представляет собой арендуемый объект"""
 
-    name = RentalDescriptor()
-    address = RentalDescriptor()
-    price_per_night = RentalDescriptor()
-    capacity = RentalDescriptor()
-    available_capacity = RentalDescriptor()
+    name: RentalDescriptor = RentalDescriptor()
+    address: RentalDescriptor = RentalDescriptor()
+    price_per_night: RentalDescriptor = RentalDescriptor()
+    capacity: RentalDescriptor = RentalDescriptor()
+    available_capacity: RentalDescriptor = RentalDescriptor()
 
     def __init__(self, rental_id: int, name: str, address: str, price_per_night: float, capacity: int) -> None:
         self._rental_id: int = rental_id
