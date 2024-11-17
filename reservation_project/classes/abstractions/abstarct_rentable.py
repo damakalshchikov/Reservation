@@ -1,8 +1,16 @@
 from abc import ABC, abstractmethod
 
+from descriptors.rental_descriptor import RentalDescriptor
+
 
 class Rentable(ABC):
     """Абстрактный класс, который представляет собой арендуемый объект"""
+
+    name = RentalDescriptor()
+    address = RentalDescriptor()
+    price_per_night = RentalDescriptor()
+    capacity = RentalDescriptor()
+    available_capacity = RentalDescriptor()
 
     def __init__(self, rental_id: int, name: str, address: str, price_per_night: float, capacity: int) -> None:
         self._rental_id: int = rental_id
