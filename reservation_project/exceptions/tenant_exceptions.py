@@ -7,6 +7,7 @@ class TenantNameError(Exception):
             f"Имя и фамилия должны начинаться с заглавной буквы и не сождеражть цифр"
         )
 
+
 class ValueAgeError(Exception):
     """Исключение недопустимого значения возраста"""
 
