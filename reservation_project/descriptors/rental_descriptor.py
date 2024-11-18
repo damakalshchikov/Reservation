@@ -1,3 +1,7 @@
+from exceptions.rentable_exceptions import TypeNameRentalError, TypeAddressRentalError, TypePriceError, ValuePriceError, \
+    TypeCapacityError, ValueCapacityError
+
+
 class RentalDescriptor:
     """Дескриптор для создания свойста(property) у объектов класса Rentable"""
     MIN_PRICE: float = 1
@@ -25,6 +29,14 @@ class RentalDescriptor:
         elif not self.MIN_PRICE <= price <= self.MAX_PRICE:
             raise ValuePriceError(price, self.MIN_PRICE, self.MAX_PRICE)
 
+    @staticmethod
+    def validate_capaciry(capacity: int) -> None:
+        """Фу-ия валидации вместимости арендуемого объекта"""
+
+        if not isinstance(capacity, int):
+            raise TypeCapacityError
+        elif capacity <= 0:
+            raise ValueCapacityError
 
     def __set_name__(self, owner, name):
         self.name = "_" + name
