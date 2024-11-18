@@ -1,4 +1,6 @@
-from validation.tenant_validation import validate_age
+import re
+
+from exceptions.tenant_exceptions import TypeAgeError, ValueAgeError, TenantNameError, PhoneNumberError
 
 
 class TenantDescriptor:
@@ -17,6 +19,11 @@ class TenantDescriptor:
         elif not self.MIN_AGE <= age <= self.MAX_AGE:
             raise ValueAgeError(age, self.MIN_AGE, self.MAX_AGE)
 
+    def validate_phone_number(self, number: str) -> None:
+        if not re.match(self.PHONE_NUMBER_PATTERN, number):
+            raise PhoneNumberError
+
+    def __set_name__(self, owner, name) -> None:
         self.name = "_" + name
 
     def __get__(self, instance, owner):
