@@ -12,8 +12,7 @@ class Rentable(ABC):
     capacity: RentalDescriptor = RentalDescriptor()
     available_capacity: RentalDescriptor = RentalDescriptor()
 
-    def __init__(self, rental_id: int, name: str, address: str, price_per_night: float, capacity: int):
-        self._rental_id: int = rental_id
+    def __init__(self, name: str, address: str, price_per_night: float, capacity: int):
         self.name: str = name
         self.address: str = address
         self.price_per_night: float = price_per_night
