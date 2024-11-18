@@ -5,6 +5,13 @@ class TypeNameRentalError(Exception):
         return "Название арендуемого объекта должно быть строкой"
 
 
+class TypeAddressRentalError(Exception):
+    """Исключение неверного типа адреса арендуемого объекта"""
+
+    def __str__(self) -> str:
+        return "Адрес должен быть строковым значением"
+
+
 class FullReservationError(Exception):
     """Исключение о переполнении арендуемого объекта"""
 
