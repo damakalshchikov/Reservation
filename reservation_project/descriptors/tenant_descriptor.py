@@ -4,7 +4,10 @@ from exceptions.tenant_exceptions import TypeAgeError, ValueAgeError, TenantName
 
 
 class TenantDescriptor:
-    """Дескриптор для создания свойста(property) у объектов класса Tenant"""
+    """
+    Дескриптор для создания свойста(property) у объектов класса Tenant
+    Также он выполняет валидацию значений атрибутов
+    """
 
     MIN_AGE: int = 18
     MAX_AGE: int = 99
