@@ -27,12 +27,10 @@ class TenantDescriptor:
     def __set_name__(self, owner, name) -> None:
         self.name = "_" + name
 
-    def __get__(self, instance, owner):
+    def __get__(self, instance, owner) -> None:
         return instance.__dict__[self.name]
 
-    def __set__(self, instance, value):
-        if self.name == "_age":
-            validate_age(value, TenantDescriptor.MIN_AGE, TenantDescriptor.MAX_AGE)
+    def __set__(self, instance, value: int | str) -> None:
         match self.name:
             case "_first_name" | "_last_name":
                 self.validate_name(value)
