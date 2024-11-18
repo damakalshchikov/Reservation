@@ -12,6 +12,13 @@ class TypeAddressRentalError(Exception):
         return "Адрес должен быть строковым значением"
 
 
+class TypePriceError(Exception):
+    """Исключение о неверном типе цены за ночь арендуемого объекта"""
+
+    def __str__(self) -> str:
+        return "Цена за ночь должна быть целым/дробным числом"
+
+
 class FullReservationError(Exception):
     """Исключение о переполнении арендуемого объекта"""
 
