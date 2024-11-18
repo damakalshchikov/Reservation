@@ -21,6 +21,7 @@ class Rentable(ABC):
 
     def to_dict(self) -> dict:
         """Возвращает словарь с данными арендуемого объекта"""
+
         return {
             "rental_id": self._rental_id,
             "name": self.name,
@@ -34,8 +35,10 @@ class Rentable(ABC):
     @abstractmethod
     def from_dict(data: dict) -> "Rentable":
         """Создаёт объект Rentable из словаря"""
+
         pass
 
     def is_fully_booked(self) -> bool:
         """Проверяет на наличие свободных мест"""
+
         return self.available_capacity == 0
