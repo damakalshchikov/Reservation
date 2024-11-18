@@ -1,12 +1,16 @@
 class TenantNameError(Exception):
-    def __str__(self):
+    """Исключение имени и(или) фамилии арендатора"""
+
+    def __str__(self) -> str:
         return (
             f"Некорректное имя и(или) фамилия."
             f"Имя и фамилия должны начинаться с заглавной буквы и не сождеражть цифр"
         )
 
 class ValueAgeError(Exception):
-    def __init__(self, age: int, min_age: int, max_age: int) -> None:
+    """Исключение недопустимого значения возраста"""
+
+    def __init__(self, age: int, min_age: int, max_age: int):
         self.age: int = age
         self.min_age: int = min_age
         self.max_age: int = max_age
@@ -16,17 +20,23 @@ class ValueAgeError(Exception):
 
 
 class TypeAgeError(Exception):
+    """Исключение неправильного типа возраста"""
+
     def __str__(self) -> str:
         return "Возраст должен быть целым числом"
 
 
 class PhoneNumberError(Exception):
+    """Исключение некорректного номера телефона"""
+
     def __str__(self) -> str:
         return "Некорректный номер телефона. Должен начинаться с 89 или +79 и содержать 11 цифр"
 
 
 class HaveRentError(Exception):
-    def __init__(self, rentable_address: str, tenant_first_name: str, tenant_last_name: str) -> None:
+    """Исключение о том, что у арендатора уже есть жильё"""
+
+    def __init__(self, rentable_address: str, tenant_first_name: str, tenant_last_name: str):
         self.rentable_address: str = rentable_address
         self.tenant_first_name: str = tenant_first_name
         self.tenant_last_name: str = tenant_last_name
