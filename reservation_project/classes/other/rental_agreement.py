@@ -9,13 +9,13 @@ class RentalAgreement:
 
     def __init__(self, rentable: Rentable, *tenants: Tenant):
         total_guests = len(tenants)
+        self._rentable = rentable
+        self._tenants = tenants
+        self._guests_count = total_guests
 
         if total_guests > rentable.available_capacity:
             raise FullReservationError(self._rentable.name)
 
-        self._rentable = rentable
-        self._tenants = tenants
-        self._guests_count = total_guests
         self.__book()
 
     def __book(self) -> None:
@@ -32,9 +32,6 @@ class RentalAgreement:
 
     def cancel(self) -> None:
         """Отменяет бронирование и освобождает места для всех арендаторов"""
-        if self._guests_count > (self._rentable.capacity - self._rentable.available_capacity):
-            raise ValueError("Невозможно отменить бронирование больше, чем было забронировано.")
-
         self._rentable.available_capacity += self._guests_count
         for tenant in self._tenants:
             tenant.detach_rental()
