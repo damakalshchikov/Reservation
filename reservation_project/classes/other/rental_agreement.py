@@ -1,5 +1,7 @@
 from classes.abstractions.abstarct_rentable import Rentable
 from classes.tenants.tenant import Tenant
+from exceptions.rentable_exceptions import FullReservationError
+from exceptions.tenant_exceptions import HaveRentError
 
 
 class RentalAgreement:
@@ -9,7 +11,7 @@ class RentalAgreement:
         total_guests = len(tenants)
 
         if total_guests > rentable.available_capacity:
-            raise ValueError("Недостаточно свободных мест для бронирования.")
+            raise FullReservationError(self._rentable.name)
 
         self._rentable = rentable
         self._tenants = tenants
@@ -21,7 +23,7 @@ class RentalAgreement:
         self._rentable.available_capacity -= self._guests_count
         for tenant in self._tenants:
             if tenant.has_rental():
-                raise ValueError(f"Арендатор {tenant.first_name} {tenant.last_name} уже арендует жильё")
+                raise HaveRentError(self._rentable.address, tenant.first_name, tenant.last_name)
             tenant.attach_rental(self._rentable)  # По умолчанию бронируем 1 место на каждого арендатора
         print(
             f"Забронировано {self._guests_count} мест в '{self._rentable.name}' для арендаторов: "
