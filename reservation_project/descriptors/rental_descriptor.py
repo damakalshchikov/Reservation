@@ -45,4 +45,14 @@ class RentalDescriptor:
         return instance.__dict__[self.name]
 
     def __set__(self, instance, value):
+        match self.name:
+            case "_name":
+                self.valudate_name(value)
+            case "_address":
+                self.validate_address(value)
+            case "_price_per_night":
+                self.validate_price(value)
+            case "_capacity":
+                self.validate_capaciry(value)
+
         instance.__dict__[self.name] = value
