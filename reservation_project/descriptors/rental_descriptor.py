@@ -3,7 +3,12 @@ from exceptions.rentable_exceptions import TypeNameRentalError, TypeAddressRenta
 
 
 class RentalDescriptor:
-    """Дескриптор для создания свойста(property) у объектов класса Rentable"""
+    """
+    Дескриптор для создания свойста(property) у объектов класса Rentable
+    Также он выполняет валидацию значений атрибутов
+    """
+
+
     MIN_PRICE: float = 1
     MAX_PRICE: float = float("inf")
 
