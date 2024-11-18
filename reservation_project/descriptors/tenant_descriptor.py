@@ -8,6 +8,7 @@ class TenantDescriptor:
     MIN_AGE: int = 18
     MAX_AGE: int = 99
     FIRST_AND_LAST_NAME_PATTERN: str = r"^[А-я][а-яА-Я]*$"
+    PHONE_NUMBER_PATTERN: str = r"^\+79\d{9}$|^89\d{9}$"
 
     def validate_name(self, name: str) -> None:
         if not re.match(self.FIRST_AND_LAST_NAME_PATTERN, name):
