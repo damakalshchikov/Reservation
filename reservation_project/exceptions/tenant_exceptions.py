@@ -18,3 +18,9 @@ class ValueAgeError(Exception):
 class TypeAgeError(Exception):
     def __str__(self):
         return "Возраст должен быть целым числом"
+
+
+class PhoneNumberError(Exception):
+    def __str__(self) -> str:
+        return "Некорректный номер телефона. Должен начинаться с 89 или +79 и содержать 11 цифр"
+
