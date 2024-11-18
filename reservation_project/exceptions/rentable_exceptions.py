@@ -1,3 +1,10 @@
+class TypeNameRentalError(Exception):
+    """Исключение неверного типа названия арендуемого объекта"""
+
+    def __str__(self) -> str:
+        return "Название арендуемого объекта должно быть строкой"
+
+
 class FullReservationError(Exception):
     """Исключение о переполнении арендуемого объекта"""
 
