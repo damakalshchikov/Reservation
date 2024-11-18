@@ -23,7 +23,6 @@ class Rentable(ABC):
         """Возвращает словарь с данными арендуемого объекта"""
 
         return {
-            "rental_id": self._rental_id,
             "name": self.name,
             "address": self.address,
             "price_per_night": self.price_per_night,
