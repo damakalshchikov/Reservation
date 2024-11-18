@@ -1,3 +1,10 @@
+class TenantNameError(Exception):
+    def __str__(self):
+        return (
+            f"Некорректное имя и(или) фамилия."
+            f"Имя и фамилия должны начинаться с заглавной буквы и не сождеражть цифр"
+        )
+
 class ValueAgeError(Exception):
     def __init__(self, age: int, min_age: int, max_age: int):
         self.age: int = age
