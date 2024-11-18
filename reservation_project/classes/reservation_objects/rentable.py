@@ -7,7 +7,6 @@ class Apartment(Rentable):
     @staticmethod
     def from_dict(data: dict) -> "Apartment":
         return Apartment(
-            rental_id=data["rental_id"],
             name=data["name"],
             address=data["address"],
             price_per_night=data["price_per_night"],
