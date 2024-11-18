@@ -5,8 +5,12 @@ class TenantDescriptor:
     # Минимальный и максимальный возрасты для заключения договора
     MIN_AGE: int = 18
     MAX_AGE: int = 99
+    FIRST_AND_LAST_NAME_PATTERN: str = r"^[А-я][а-яА-Я]*$"
 
-    def __set_name__(self, owner, name):
+    def validate_name(self, name: str) -> None:
+        if not re.match(self.FIRST_AND_LAST_NAME_PATTERN, name):
+            raise TenantNameError
+
     def validate_age(self, age: int) -> None:
         if not isinstance(age, int):
             raise TypeAgeError
