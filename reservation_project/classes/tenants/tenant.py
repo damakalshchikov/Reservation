@@ -14,6 +14,7 @@ class Tenant:
         self.first_name: str = first_name
         self.last_name: str = last_name
         self.age: int = age
+        self.money: int| float = 0
         self.phone_number: str = phone_number
         self._place_of_residence: None | Rentable = None
 
