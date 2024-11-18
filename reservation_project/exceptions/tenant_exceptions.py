@@ -6,17 +6,17 @@ class TenantNameError(Exception):
         )
 
 class ValueAgeError(Exception):
-    def __init__(self, age: int, min_age: int, max_age: int):
+    def __init__(self, age: int, min_age: int, max_age: int) -> None:
         self.age: int = age
         self.min_age: int = min_age
         self.max_age: int = max_age
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Недопустимое значение: {self.age}. Возраст должен быть от {self.min_age} до {self.max_age}"
 
 
 class TypeAgeError(Exception):
-    def __str__(self):
+    def __str__(self) -> str:
         return "Возраст должен быть целым числом"
 
 
