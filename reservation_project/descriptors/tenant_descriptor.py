@@ -7,6 +7,12 @@ class TenantDescriptor:
     MAX_AGE: int = 99
 
     def __set_name__(self, owner, name):
+    def validate_age(self, age: int) -> None:
+        if not isinstance(age, int):
+            raise TypeAgeError
+        elif not self.MIN_AGE <= age <= self.MAX_AGE:
+            raise ValueAgeError(age, self.MIN_AGE, self.MAX_AGE)
+
         self.name = "_" + name
 
     def __get__(self, instance, owner):
