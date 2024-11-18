@@ -15,7 +15,7 @@ class Rentable(ABC):
     def __init__(self, name: str, address: str, price_per_night: float, capacity: int):
         self.name: str = name
         self.address: str = address
-        self.price_per_night: float = price_per_night
+        self.price_per_night: int | float = price_per_night
         self.capacity: int = capacity
         self.available_capacity: int = capacity
 
