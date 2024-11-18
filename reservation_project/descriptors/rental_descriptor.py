@@ -1,4 +1,6 @@
 class RentalDescriptor:
+    """Дескриптор для создания свойста(property) у объектов класса Rentable"""
+
     def __set_name__(self, owner, name):
         self.name = "_" + name
 
