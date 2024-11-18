@@ -29,7 +29,7 @@ class RentalAgreement:
             tenant.attach_rental(self._rentable)
 
         print(
-            f"Забронировано {self._guests_count} мест в '{self._rentable.name}' для арендаторов: "
+            f"""Забронировано {self._guests_count} мест в "{self._rentable.name}" для арендаторов: """
             + ", ".join([f"{t.first_name} {t.last_name}" for t in self._tenants])
         )
 
@@ -42,6 +42,6 @@ class RentalAgreement:
             tenant.detach_rental()
 
         print(
-            f"Бронирование {self._guests_count} мест в '{self._rentable.name}' отменено для арендаторов: "
+            f"""Бронирование {self._guests_count} мест в "{self._rentable.name}" отменено для арендаторов: """
             + ", ".join([f"{t.first_name} {t.last_name}" for t in self._tenants])
         )
