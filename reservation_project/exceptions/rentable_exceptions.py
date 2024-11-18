@@ -38,6 +38,13 @@ class TypeCapacityError(Exception):
         return "Значение вместимости арендуемого объекта должно быть целым чслом"
 
 
+class ValueCapacityError(Exception):
+    """Исключение о неверном значении цены за ночь арендуемого объекта"""
+
+    def __str__(self) -> str:
+        return "Вместимость должны быть не меньше единицы"
+
+
 class FullReservationError(Exception):
     """Исключение о переполнении арендуемого объекта"""
 
