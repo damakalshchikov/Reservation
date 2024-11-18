@@ -19,6 +19,7 @@ class Tenant:
 
     def to_dict(self) -> dict:
         """Возвращает словарь с данными арендатора"""
+
         return {
             "first_name": self.first_name,
             "last_name": self.last_name,
@@ -30,23 +31,27 @@ class Tenant:
     @staticmethod
     def from_dict(data: dict) -> "Tenant":
         """Создаёт объект Tenant из словаря"""
+
         tenant = Tenant(
             first_name=data["first_name"],
             last_name=data["last_name"],
             age=data["age"],
             phone_number=data["phone_number"],
         )
-        tenant._guests_count = data.get("guests_count", 0)
+
         return tenant
 
     def attach_rental(self, rentable: Rentable) -> None:
         """Привязывает арендатора к месту проживания"""
+
         self._place_of_residence = rentable
 
     def detach_rental(self) -> None:
         """Отвязывает арендатора от места проживания"""
+
         self._place_of_residence = None
 
     def has_rental(self) -> bool:
         """Проверяет, проживает ли арендатор в арендуемом жилье"""
+
         return self._place_of_residence is not None
