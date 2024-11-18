@@ -24,3 +24,12 @@ class PhoneNumberError(Exception):
     def __str__(self) -> str:
         return "Некорректный номер телефона. Должен начинаться с 89 или +79 и содержать 11 цифр"
 
+
+class HaveRentError(Exception):
+    def __init__(self, rentable_address: str, tenant_first_name: str, tenant_last_name: str) -> None:
+        self.rentable_address: str = rentable_address
+        self.tenant_first_name: str = tenant_first_name
+        self.tenant_last_name: str = tenant_last_name
+
+    def __str__(self) -> str:
+        return f"{self.tenant_first_name} {self.tenant_last_name} уже проживает по адресу: {self.rentable_address}"
