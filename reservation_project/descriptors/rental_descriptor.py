@@ -7,7 +7,6 @@ class RentalDescriptor:
     Также он выполняет валидацию значений атрибутов
     """
 
-
     MIN_PRICE: float = 1
     MAX_PRICE: float = float("inf")
 
