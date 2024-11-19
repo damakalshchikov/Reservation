@@ -10,6 +10,7 @@ class BudgetError(Exception):
         return (f"Недостаточно средств для бронирования {self.rentable_name}."
                 f"Необходимая сумма: {self.cost}, доступная сумма: {self.budget}")
 
+
 class FullReservationError(Exception):
     """Исключение о переполнении арендуемого объекта"""
 
