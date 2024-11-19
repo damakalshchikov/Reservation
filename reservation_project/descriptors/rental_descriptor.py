@@ -34,15 +34,6 @@ class RentalDescriptor:
         elif not self.MIN_PRICE <= price <= self.MAX_PRICE:
             raise ValuePriceError(price, self.MIN_PRICE, self.MAX_PRICE)
 
-    @staticmethod
-    def validate_capaciry(capacity: int) -> None:
-        """Фу-ия валидации вместимости арендуемого объекта"""
-
-        if not isinstance(capacity, int):
-            raise TypeCapacityError
-        elif capacity <= 0:
-            raise ValueCapacityError
-
     def __set_name__(self, owner, name):
         self.name = "_" + name
 
@@ -57,7 +48,5 @@ class RentalDescriptor:
                 self.validate_address(value)
             case "_price_per_night":
                 self.validate_price(value)
-            case "_capacity":
-                self.validate_capaciry(value)
 
         instance.__dict__[self.name] = value

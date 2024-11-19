@@ -9,15 +9,25 @@ class Rentable(ABC):
     name: RentalDescriptor = RentalDescriptor()
     address: RentalDescriptor = RentalDescriptor()
     price_per_night: RentalDescriptor = RentalDescriptor()
-    capacity: RentalDescriptor = RentalDescriptor()
-    available_capacity: RentalDescriptor = RentalDescriptor()
 
     def __init__(self, name: str, address: str, price_per_night: float, capacity: int):
         self.name: str = name
         self.address: str = address
         self.price_per_night: int | float = price_per_night
-        self.capacity: int = capacity
-        self.available_capacity: int = capacity
+        self.__capacity: int = capacity
+        self.__available_capacity: int = capacity
+
+    @property
+    def capacity(self) -> int:
+        return self.__capacity
+
+    @property
+    def available_capacity(self) -> int:
+        return self.__available_capacity
+
+    @available_capacity.setter
+    def available_capacity(self, available_capacity: int) -> None:
+        self.__available_capacity: int = available_capacity
 
     def to_dict(self) -> dict:
         """Возвращает словарь с данными арендуемого объекта"""
