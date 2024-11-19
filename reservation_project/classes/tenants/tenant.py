@@ -8,13 +8,14 @@ class Tenant:
     first_name: TenantDescriptor = TenantDescriptor()
     last_name: TenantDescriptor = TenantDescriptor()
     age: TenantDescriptor = TenantDescriptor()
+    money: TenantDescriptor = TenantDescriptor()
     phone_number: TenantDescriptor = TenantDescriptor()
 
-    def __init__(self, first_name: str, last_name: str, age: int, phone_number: str):
+    def __init__(self, first_name: str, last_name: str, age: int, money: int | float, phone_number: str):
         self.first_name: str = first_name
         self.last_name: str = last_name
         self.age: int = age
-        self.money: int| float = 0
+        self.money: int| float = money
         self.phone_number: str = phone_number
         self._place_of_residence: None | Rentable = None
 
@@ -25,6 +26,7 @@ class Tenant:
             "first_name": self.first_name,
             "last_name": self.last_name,
             "age": self.age,
+            "money": self.money,
             "phone_number": self.phone_number,
             "place_of_residence": self._place_of_residence.to_dict() if self._place_of_residence else None,
         }
@@ -37,6 +39,7 @@ class Tenant:
             first_name=data["first_name"],
             last_name=data["last_name"],
             age=data["age"],
+            money=data["money"],
             phone_number=data["phone_number"],
         )
 
