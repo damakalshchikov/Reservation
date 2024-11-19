@@ -1,5 +1,4 @@
-from exceptions.rentable_exceptions import TypeNameRentalError, TypeAddressRentalError, TypePriceError, ValuePriceError, \
-    TypeCapacityError, ValueCapacityError
+from exceptions.rentable_exceptions import TypeNameRentalError, TypeAddressRentalError, TypePriceError, ValuePriceError
 
 
 class RentalDescriptor:
@@ -13,7 +12,7 @@ class RentalDescriptor:
     MAX_PRICE: float = float("inf")
 
     @staticmethod
-    def valudate_name(name: str) -> None:
+    def validate_name(name: str) -> None:
         """Фу-ия валидации названия арендуемого объекта"""
 
         if not isinstance(name, str):
@@ -43,7 +42,7 @@ class RentalDescriptor:
     def __set__(self, instance, value):
         match self.name:
             case "_name":
-                self.valudate_name(value)
+                self.validate_name(value)
             case "_address":
                 self.validate_address(value)
             case "_price_per_night":
