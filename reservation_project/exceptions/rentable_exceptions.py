@@ -29,27 +29,3 @@ class ValuePriceError(Exception):
 
     def __str__(self) -> str:
         return f"Недопустимое значение цены: {self.price}. Цена должна быть в диапазоне от {self.min_price} до {self.max_price}"
-
-
-class TypeCapacityError(Exception):
-    """Исключение о неверном типе вместимости арендуемого объекта"""
-
-    def __str__(self) -> str:
-        return "Значение вместимости арендуемого объекта должно быть целым чслом"
-
-
-class ValueCapacityError(Exception):
-    """Исключение о неверном значении цены за ночь арендуемого объекта"""
-
-    def __str__(self) -> str:
-        return "Вместимость должны быть не меньше единицы"
-
-
-class FullReservationError(Exception):
-    """Исключение о переполнении арендуемого объекта"""
-
-    def __init__(self, rental_name: str):
-        self.rental_name: str = rental_name
-
-    def __str__(self) -> str:
-        return f"""Арендуемый объект "{self.rental_name}" переполнен"""
