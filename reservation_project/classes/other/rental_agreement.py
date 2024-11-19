@@ -1,22 +1,33 @@
 from classes.abstractions.abstarct_rentable import Rentable
 from classes.tenants.tenant import Tenant
-from exceptions.rentable_exceptions import FullReservationError
+from exceptions.agreement_exceptions import BudgetError, FullReservationError
 from exceptions.tenant_exceptions import HaveRentError
 
 
 class RentalAgreement:
     """Класс для управления бронированием и отменой бронирования с несколькими арендаторами."""
 
-    def __init__(self, rentable: Rentable, *tenants: Tenant):
+    def __init__(self, rentable: Rentable, nights: int, *tenants: Tenant):
         total_guests = len(tenants)
         self._rentable = rentable
+        self._nights = nights
         self._tenants = tenants
         self._guests_count = total_guests
 
         if total_guests > rentable.available_capacity:
-            raise FullReservationError(self._rentable.name)
+            raise FullReservationError(self._rentable.name, self._rentable.available_capacity)
 
+        self.__chek_budget()
         self.__book()
+
+    def __chek_budget(self) -> None:
+        """Проверка на то, хватает ли бюджета для бронирования"""
+
+        total_budget: int | float = sum(tenant.money for tenant in self._tenants)
+        total_cost: int | float = self._rentable.price_per_night * self._nights
+
+        if total_budget < total_cost:
+            raise BudgetError(self._rentable.name, total_budget, total_cost)
 
     def __book(self) -> None:
         """Бронирует места для всех переданных арендаторов"""
