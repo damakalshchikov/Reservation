@@ -1,7 +1,7 @@
 from classes.abstractions.abstarct_rentable import Rentable
 from classes.tenants.tenant import Tenant
 from exceptions.agreement_exceptions import BudgetError, FullReservationError
-from exceptions.tenant_exceptions import HaveRentError
+from exceptions.agreement_exceptions import HaveRentError
 
 
 class RentalAgreement:
