@@ -1,4 +1,4 @@
-from exceptions.rentable_exceptions import TypeNameRentalError, TypeAddressRentalError, TypePriceError, ValuePriceError
+from exceptions.rental_exceptions import TypeNameRentalError, TypeAddressRentalError, TypePriceError, ValuePriceError
 
 
 class RentalDescriptor:
