@@ -28,6 +28,15 @@ class TenantDescriptor:
         elif not self.MIN_AGE <= age <= self.MAX_AGE:
             raise ValueAgeError(age, self.MIN_AGE, self.MAX_AGE)
 
+    @staticmethod
+    def validate_money(money: int | float) -> None:
+        """Ф-ия валидации денежной суммы арендатора"""
+
+        if not isinstance(money, (int, float)):
+            raise TypeError("Деньги должны быть целым или дробным числом")
+        elif money < 0:
+            raise ValueError("Денги не могут быть отрицательными")
+
     def validate_phone_number(self, number: str) -> None:
         """Фу-ия валидации номера телефона арендатора"""
 
@@ -46,6 +55,8 @@ class TenantDescriptor:
                 self.validate_name(value)
             case "_age":
                 self.validate_age(value)
+            case "_money":
+                self.validate_money(value)
             case "_phone_number":
                 self.validate_phone_number(value)
 
