@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Tenants>
+    <Tenant>
+        <id>1</id>
+        <first_name>Анна</first_name>
+        <last_name>Петрова</last_name>
+        <age>32</age>
+        <money>9000</money>
+        <phone_number>+79005554433</phone_number>
+        <place_of_residence />
+    </Tenant>
+    <Tenant>
+        <id>2</id>
+        <first_name>Максим</first_name>
+        <last_name>Сидоров</last_name>
+        <age>29</age>
+        <money>3999</money>
+        <phone_number>+79007776655</phone_number>
+        <place_of_residence />
+    </Tenant>
+    <Tenant>
+        <id>3</id>
+        <first_name>Ольга</first_name>
+        <last_name>Кузнецова</last_name>
+        <age>35</age>
+        <money>3500</money>
+        <phone_number>+79001234567</phone_number>
+        <place_of_residence />
+    </Tenant>
+    <Tenant>
+        <id>4</id>
+        <first_name>Михаил</first_name>
+        <last_name>Петров</last_name>
+        <age>19</age>
+        <money>500</money>
+        <phone_number>89000000000</phone_number>
+        <place_of_residence />
+    </Tenant>
+    <Tenant>
+        <id>5</id>
+        <first_name>Олег</first_name>
+        <last_name>Олегович</last_name>
+        <age>18</age>
+        <money>999</money>
+        <phone_number>89000000001</phone_number>
+        <place_of_residence />
+    </Tenant>
+</Tenants>

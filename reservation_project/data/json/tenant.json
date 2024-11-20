@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "first_name": "Анна",
+        "last_name": "Петрова",
+        "age": 32,
+        "money": 9000,
+        "phone_number": "+79005554433",
+        "place_of_residence": null
+    },
+    {
+        "id": 2,
+        "first_name": "Максим",
+        "last_name": "Сидоров",
+        "age": 29,
+        "money": 3999,
+        "phone_number": "+79007776655",
+        "place_of_residence": null
+    },
+    {
+        "id": 3,
+        "first_name": "Ольга",
+        "last_name": "Кузнецова",
+        "age": 35,
+        "money": 3500,
+        "phone_number": "+79001234567",
+        "place_of_residence": null
+    },
+    {
+        "id": 4,
+        "first_name": "Михаил",
+        "last_name": "Петров",
+        "age": 19,
+        "money": 500,
+        "phone_number": "89000000000",
+        "place_of_residence": null
+    },
+    {
+        "id": 5,
+        "first_name": "Олег",
+        "last_name": "Олегович",
+        "age": 18,
+        "money": 999,
+        "phone_number": "89000000001",
+        "place_of_residence": null
+    }
+]
