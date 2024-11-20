@@ -5,6 +5,8 @@ from descriptors.tenant_descriptor import TenantDescriptor
 class Tenant:
     """Класс, представляющий арендатора"""
 
+    _next_id: int = 1
+
     first_name: TenantDescriptor = TenantDescriptor()
     last_name: TenantDescriptor = TenantDescriptor()
     age: TenantDescriptor = TenantDescriptor()
@@ -12,17 +14,24 @@ class Tenant:
     phone_number: TenantDescriptor = TenantDescriptor()
 
     def __init__(self, first_name: str, last_name: str, age: int, money: int | float, phone_number: str):
+        self._id: int = Tenant._next_id
         self.first_name: str = first_name
         self.last_name: str = last_name
         self.age: int = age
         self.money: int| float = money
         self.phone_number: str = phone_number
         self._place_of_residence: None | Rentable = None
+        Tenant._next_id += 1
+
+    @property
+    def tenant_id(self) -> int:
+        return self._id
 
     def to_dict(self) -> dict:
         """Возвращает словарь с данными арендатора"""
 
         return {
+            "id": self._id,
             "first_name": self.first_name,
             "last_name": self.last_name,
             "age": self.age,
