@@ -79,10 +79,11 @@ class RentableMenager:
         """Загружает список объектов Rentable из JSON файла"""
 
         with open(filename, "r", encoding="utf-8") as json_file:
-            data = json.load(json_file)
+            data: list[dict] = json.load(json_file)
         for obj_data in data:
-            class_name = obj_data.pop("class_name", None)
-            cls = class_names.get(class_name)
+            class_name: str = obj_data.pop("class_name")
+            obj_data.pop("id"), obj_data.pop("capacity"), obj_data.pop("available_capacity")
+            cls = self.__class_names.get(class_name)
             if cls:
                 self.create(cls, **obj_data)
 
@@ -104,9 +105,10 @@ class RentableMenager:
         tree = ET.parse(filename)
         root = tree.getroot()
         for obj_elem in root:
-            cls = class_names.get(obj_elem.tag)
+            cls: ABCMeta = self.__class_names.get(obj_elem.tag)
             if cls:
-                obj_data = {child.tag: child.text for child in obj_elem}
+                obj_data: dict[str, str | int | float] = {child.tag: child.text for child in obj_elem}
                 # Преобразование типов
                 obj_data["price_per_night"] = float(obj_data["price_per_night"])
+                obj_data.pop("id"), obj_data.pop("capacity"), obj_data.pop("available_capacity")
                 self.create(cls, **obj_data)
