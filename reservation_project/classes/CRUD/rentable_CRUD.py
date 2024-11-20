@@ -21,9 +21,9 @@ class RentableMenager:
     def create(self, class_name: ABCMeta, name: str, address: str, price_per_night: int | float) -> Rentable:
         """Создаёт и добавляет объект Rentable список"""
 
-        result: Rentable = class_name(name=name, address=address, price_per_night=price_per_night)
-        self.rentable_list.append(result)
-        return result
+        rentable_obj: Rentable = class_name(name=name, address=address, price_per_night=price_per_night)
+        self.rentable_list.append(rentable_obj)
+        return rentable_obj
 
     def read_all(self):
         """Возвращает список всех объектов Rentable"""
