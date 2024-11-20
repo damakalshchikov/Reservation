@@ -9,6 +9,12 @@ from classes.reservation_objects.rentable import Apartment, House, Room
 class RentableMenager:
     """CRUD-менеджер для управления объектами Rentable"""
 
+    __class_names: dict[str, ABCMeta] = {
+        "Room": Room,
+        "Apartment": Apartment,
+        "House": House
+    }
+
     def __init__(self):
         self.rentable_list: list[Rentable] = []
 
@@ -72,12 +78,6 @@ class RentableMenager:
     def load_from_json(self, filename: str) -> None:
         """Загружает список объектов Rentable из JSON файла"""
 
-        class_names = {
-            "Room": Room,
-            "Apartment": Apartment,
-            "House": House
-        }
-
         with open(filename, "r", encoding="utf-8") as json_file:
             data = json.load(json_file)
         for obj_data in data:
@@ -100,12 +100,6 @@ class RentableMenager:
 
     def load_from_xml(self, filename: str) -> None:
         """Загружает список объектов Rentable из XML файла"""
-
-        class_names = {
-            "Room": Room,
-            "Apartment": Apartment,
-            "House": House
-        }
 
         tree = ET.parse(filename)
         root = tree.getroot()
