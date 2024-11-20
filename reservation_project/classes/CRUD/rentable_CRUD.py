@@ -25,20 +25,21 @@ class RentableMenager:
         self.rentable_list.append(rentable_obj)
         return rentable_obj
 
-    def read_all(self):
+    def read_all(self) -> list[Rentable]:
         """Возвращает список всех объектов Rentable"""
 
         return self.rentable_list
 
     def read_by_id(self, rentable_id: int) -> Rentable:
-        """Возвращает Rentable объъект по его ID"""
+        """Возвращает Rentable объект по его ID"""
 
         for rentable in self.rentable_list:
             if rentable.rentable_id == rentable_id:
                 return rentable
         # Добавить собственное исключение
 
-    def update(self, rentable_id: int, name: str| None, address: str| None = None, price_per_night: int | float | None = None) -> None:
+    def update(self, rentable_id: int, name: str| None = None,
+               address: str| None = None, price_per_night: int | float | None = None) -> None:
         """Обновляет атрибуты Rentable объекта по его ID"""
 
         try:
