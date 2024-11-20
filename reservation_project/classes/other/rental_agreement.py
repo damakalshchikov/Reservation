@@ -8,11 +8,11 @@ class RentalAgreement:
     """Класс для управления бронированием и отменой бронирования с несколькими арендаторами."""
 
     def __init__(self, rentable: Rentable, nights: int, *tenants: Tenant):
-        total_guests = len(tenants)
-        self._rentable = rentable
-        self._nights = nights
-        self._tenants = tenants
-        self._guests_count = total_guests
+        total_guests: int = len(tenants)
+        self._rentable: Rentable = rentable
+        self._nights: int = nights
+        self._tenants: tuple[Tenant, ...] = tenants
+        self._guests_count: int = total_guests
 
         if total_guests > rentable.available_capacity:
             raise FullReservationError(self._rentable.name, self._rentable.available_capacity)
