@@ -41,9 +41,12 @@ class Rentable(ABC):
         """Возвращает словарь с данными арендуемого объекта"""
 
         return {
+            "id": self._id,
             "name": self.name,
             "address": self.address,
             "price_per_night": self.price_per_night,
+            "capacity": self.__capacity,
+            "available_capacity": self.__available_capacity
         }
 
     @staticmethod
