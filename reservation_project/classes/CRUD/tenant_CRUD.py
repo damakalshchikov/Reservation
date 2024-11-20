@@ -98,7 +98,7 @@ class TenantMenager:
         root = tree.getroot()
 
         for tenant_elem in root.findall("Tenant"):
-            tenant_data = {child.tag: child.text for child in tenant_elem}
+            tenant_data: dict[str, str | float | None] = {child.tag: child.text for child in tenant_elem}
             # Преобразуем данные
             tenant_data["age"] = int(tenant_data["age"])
             tenant_data["money"] = float(tenant_data["money"])
