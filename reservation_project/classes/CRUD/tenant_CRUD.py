@@ -2,6 +2,7 @@ import json
 import xml.etree.ElementTree as ET
 
 from classes.tenants.tenant import Tenant
+from exceptions.CRUD_exceptions import ObjectNotFound
 
 
 class TenantMenager:
@@ -27,7 +28,7 @@ class TenantMenager:
         for tenant in self.tenant_list:
             if tenant.tenant_id == tenant_id:
                 return tenant
-        # Добавить собственное исключение
+        raise ObjectNotFound
 
     def update(self, tenant_id: int, first_name: str | None = None, last_name: str | None = None,
                age: int | None = None, money: int | float | None = None, phone_number: str | None = None) -> None:
@@ -35,8 +36,8 @@ class TenantMenager:
 
         try:
             tenant: Tenant = self.read_by_id(tenant_id)
-        except Exception:
-            print("Невозможно удалить несуществующий объект")
+        except ObjectNotFound:
+            print("Невозможно обновить несуществующий объект")
         else:
             tenant.first_name = first_name if first_name else tenant.first_name
             tenant.last_name = last_name if last_name else tenant.last_name
@@ -49,7 +50,7 @@ class TenantMenager:
 
         try:
             tenant: Tenant = self.read_by_id(tenant_id)
-        except Exception:
+        except ObjectNotFound:
             print("Невозможно удалить несуществующий объект")
         else:
             self.tenant_list.remove(tenant)

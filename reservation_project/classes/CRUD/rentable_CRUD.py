@@ -4,6 +4,7 @@ from abc import ABCMeta
 
 from classes.abstractions.abstarct_rentable import Rentable
 from classes.reservation_objects.rentable import Apartment, House, Room
+from exceptions.CRUD_exceptions import ObjectNotFound
 
 
 class RentableMenager:
@@ -36,7 +37,7 @@ class RentableMenager:
         for rentable in self.rentable_list:
             if rentable.rentable_id == rentable_id:
                 return rentable
-        # Добавить собственное исключение
+        raise ObjectNotFound
 
     def update(self, rentable_id: int, name: str| None = None,
                address: str| None = None, price_per_night: int | float | None = None) -> None:
@@ -44,7 +45,7 @@ class RentableMenager:
 
         try:
             rentable_obj: Rentable = self.read_by_id(rentable_id)
-        except Exception:
+        except ObjectNotFound:
             print("Невозможно обновить несуществующий объект")
         else:
             rentable_obj.name = name if name else rentable_obj.name
@@ -57,7 +58,7 @@ class RentableMenager:
 
         try:
             rentable_obj: Rentable = self.read_by_id(rentable_id)
-        except Exception:
+        except ObjectNotFound:
             print("Невозможно удалить несуществующий объект")
         else:
             self.rentable_list.remove(rentable_obj)
