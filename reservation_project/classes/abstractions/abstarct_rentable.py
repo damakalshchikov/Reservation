@@ -44,8 +44,6 @@ class Rentable(ABC):
             "name": self.name,
             "address": self.address,
             "price_per_night": self.price_per_night,
-            "capacity": self.capacity,
-            "available_capacity": self.available_capacity,
         }
 
     @staticmethod
