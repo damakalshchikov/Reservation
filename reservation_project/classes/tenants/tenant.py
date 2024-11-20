@@ -23,6 +23,9 @@ class Tenant:
         self._place_of_residence: None | Rentable = None
         Tenant._next_id += 1
 
+    def __str__(self):
+        return f"Арендатор:\nИмя: {self.first_name}\nФамилия: {self.last_name}"
+
     @property
     def tenant_id(self) -> int:
         return self._id
