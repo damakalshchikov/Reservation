@@ -1,18 +1,27 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Rentables>
     <Room>
+        <id>1</id>
         <name>Комната Люкс</name>
         <address>г. Москва, ул. Киевская, д. 20</address>
         <price_per_night>3000</price_per_night>
+        <capacity>2</capacity>
+        <available_capacity>2</available_capacity>
     </Room>
     <Apartment>
+        <id>2</id>
         <name>Квартира на Патриках</name>
         <address>г. Москва, ул. Малая Бронная, д. 34</address>
         <price_per_night>10000</price_per_night>
+        <capacity>4</capacity>
+        <available_capacity>4</available_capacity>
     </Apartment>
     <House>
+        <id>3</id>
         <name>Домик в горах</name>
         <address>г. Омск, ул. Горная, д. 11</address>
         <price_per_night>5000</price_per_night>
+        <capacity>8</capacity>
+        <available_capacity>8</available_capacity>
     </House>
 </Rentables>
