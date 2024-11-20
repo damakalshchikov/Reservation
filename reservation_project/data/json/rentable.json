@@ -1,0 +1,20 @@
+[
+    {
+        "class_name": "Room",
+        "name": "Комната Люкс",
+        "address": "г. Москва, ул. Киевская, д. 20",
+        "price_per_night": 3000
+    },
+    {
+        "class_name": "Apartment",
+        "name": "Квартира на Патриках",
+        "address": "г. Москва, ул. Малая Бронная, д. 34",
+        "price_per_night": 10000
+    },
+    {
+        "class_name": "House",
+        "name": "Домик в горах",
+        "address": "г. Омск, ул. Горная, д. 11",
+        "price_per_night": 5000
+    }
+]

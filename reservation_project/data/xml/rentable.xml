@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Rentables>
+    <Room>
+        <name>Комната Люкс</name>
+        <address>г. Москва, ул. Киевская, д. 20</address>
+        <price_per_night>3000</price_per_night>
+    </Room>
+    <Apartment>
+        <name>Квартира на Патриках</name>
+        <address>г. Москва, ул. Малая Бронная, д. 34</address>
+        <price_per_night>10000</price_per_night>
+    </Apartment>
+    <House>
+        <name>Домик в горах</name>
+        <address>г. Омск, ул. Горная, д. 11</address>
+        <price_per_night>5000</price_per_night>
+    </House>
+</Rentables>
