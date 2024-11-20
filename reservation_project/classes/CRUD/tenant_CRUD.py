@@ -74,6 +74,7 @@ class TenantMenager:
         with open(filename, "r", encoding="utf-8") as json_file:
             data = json.load(json_file)
         for obj_data in data:
+            # Удаление ненужных атрибутов при инициализации Tenant
             obj_data.pop("id"), obj_data.pop("place_of_residence")
             self.create(**obj_data)
 
@@ -102,5 +103,6 @@ class TenantMenager:
             # Преобразуем данные
             tenant_data["age"] = int(tenant_data["age"])
             tenant_data["money"] = float(tenant_data["money"])
+            # Удаление ненужных атрибутов при инициализации Tenant
             tenant_data.pop("id"), tenant_data.pop("place_of_residence")
             self.create(**tenant_data)

@@ -84,6 +84,7 @@ class RentableMenager:
             data: list[dict] = json.load(json_file)
         for obj_data in data:
             class_name: str = obj_data.pop("class_name")
+            # Удаление ненужных атрибутов при инициализации Rentable
             obj_data.pop("id"), obj_data.pop("capacity"), obj_data.pop("available_capacity")
             cls = self.__class_names.get(class_name)
             if cls:
@@ -110,7 +111,8 @@ class RentableMenager:
             cls: ABCMeta = self.__class_names.get(obj_elem.tag)
             if cls:
                 obj_data: dict[str, str | int | float] = {child.tag: child.text for child in obj_elem}
-                # Преобразование типов
+                # Преобразуем данные
                 obj_data["price_per_night"] = float(obj_data["price_per_night"])
+                # Удаление ненужных атрибутов при инициализации Rentable
                 obj_data.pop("id"), obj_data.pop("capacity"), obj_data.pop("available_capacity")
                 self.create(cls, **obj_data)
