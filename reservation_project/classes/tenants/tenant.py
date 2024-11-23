@@ -24,7 +24,7 @@ class Tenant:
         Tenant._next_id += 1
 
     def __str__(self):
-        return f"Арендатор:\nИмя: {self.first_name}\nФамилия: {self.last_name}"
+        return f"Арендатор:\nИмя: {self.first_name}\nФамилия: {self.last_name}\nБюджет: {self.money}"
 
     @property
     def tenant_id(self) -> int:
