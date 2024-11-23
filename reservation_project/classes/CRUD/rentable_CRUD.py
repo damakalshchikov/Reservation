@@ -19,7 +19,7 @@ class RentableMenager:
     def __init__(self):
         self.rentable_list: list[Rentable] = []
 
-    def create(self, class_name: ABCMeta, name: str, address: str, price_per_night: int | float) -> Rentable:
+    def create(self, class_name: ABCMeta, name: str, address: str, price_per_night: int | float) -> Room| Apartment | House | Rentable:
         """Создаёт и добавляет объект Rentable список"""
 
         rentable_obj: Rentable = class_name(name=name, address=address, price_per_night=price_per_night)

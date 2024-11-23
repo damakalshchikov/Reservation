@@ -42,7 +42,7 @@ class TenantMenager:
             tenant.first_name = first_name if first_name else tenant.first_name
             tenant.last_name = last_name if last_name else tenant.last_name
             tenant.age = age if age else tenant.age
-            tenant.money = money if money else tenant.money
+            tenant.money = money if money is not None else tenant.money
             tenant.phone_number = phone_number if phone_number else tenant.phone_number
 
     def delete(self, tenant_id: int) -> None:
