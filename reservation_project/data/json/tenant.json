@@ -1,47 +1,43 @@
 [
     {
         "id": 1,
-        "first_name": "Анна",
-        "last_name": "Петрова",
-        "age": 32,
-        "money": 9000,
-        "phone_number": "+79005554433",
-        "place_of_residence": null
+        "first_name": "Михаил",
+        "last_name": "Дамакальщиков",
+        "age": 19,
+        "money": 0,
+        "phone_number": "89000000000",
+        "place_of_residence": {
+            "id": 1,
+            "name": "Квартира в ЖК 'VIP-супер-крутость'",
+            "address": "г. Москва, ул. Лубянка, д. 1",
+            "price_per_night": 5000,
+            "capacity": 4,
+            "available_capacity": 2
+        }
     },
     {
         "id": 2,
-        "first_name": "Максим",
-        "last_name": "Сидоров",
-        "age": 29,
-        "money": 3999,
-        "phone_number": "+79007776655",
-        "place_of_residence": null
+        "first_name": "Игорь",
+        "last_name": "Петров",
+        "age": 45,
+        "money": 15000,
+        "phone_number": "89005553535",
+        "place_of_residence": {
+            "id": 1,
+            "name": "Квартира в ЖК 'VIP-супер-крутость'",
+            "address": "г. Москва, ул. Лубянка, д. 1",
+            "price_per_night": 5000,
+            "capacity": 4,
+            "available_capacity": 2
+        }
     },
     {
         "id": 3,
-        "first_name": "Ольга",
-        "last_name": "Кузнецова",
-        "age": 35,
-        "money": 3500,
-        "phone_number": "+79001234567",
-        "place_of_residence": null
-    },
-    {
-        "id": 4,
-        "first_name": "Михаил",
-        "last_name": "Петров",
-        "age": 19,
-        "money": 500,
-        "phone_number": "89000000000",
-        "place_of_residence": null
-    },
-    {
-        "id": 5,
-        "first_name": "Олег",
-        "last_name": "Олегович",
-        "age": 18,
-        "money": 999,
-        "phone_number": "89000000001",
+        "first_name": "Вася",
+        "last_name": "Пупкик",
+        "age": 20,
+        "money": 3000,
+        "phone_number": "+79005002010",
         "place_of_residence": null
     }
 ]

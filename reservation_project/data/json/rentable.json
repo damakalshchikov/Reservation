@@ -1,29 +1,29 @@
 [
     {
-        "class_name": "Room",
+        "class_name": "Apartment",
         "id": 1,
-        "name": "Комната Люкс",
-        "address": "г. Москва, ул. Киевская, д. 20",
-        "price_per_night": 3000,
-        "capacity": 2,
+        "name": "Квартира в ЖК 'VIP-супер-крутость'",
+        "address": "г. Москва, ул. Лубянка, д. 1",
+        "price_per_night": 5000,
+        "capacity": 4,
         "available_capacity": 2
     },
     {
-        "class_name": "Apartment",
+        "class_name": "Room",
         "id": 2,
-        "name": "Квартира на Патриках",
-        "address": "г. Москва, ул. Малая Бронная, д. 34",
-        "price_per_night": 10000,
-        "capacity": 4,
-        "available_capacity": 4
+        "name": "Комната в отеле",
+        "address": "г. Санкт-Петербург, пр-т. Лиговский, д. 2",
+        "price_per_night": 1500,
+        "capacity": 2,
+        "available_capacity": 2
     },
     {
         "class_name": "House",
         "id": 3,
         "name": "Домик в горах",
-        "address": "г. Омск, ул. Горная, д. 11",
+        "address": "посёлок городского типа 'Красная Поляна'",
         "price_per_night": 5000,
         "capacity": 8,
-        "available_capacity": 8
+        "available_capacity": 6
     }
 ]
