@@ -7,8 +7,8 @@ class BudgetError(Exception):
         self.cost: int | float = cost
 
     def __str__(self):
-        return (f"Недостаточно средств для бронирования {self.rentable_name}."
-                f"Необходимая сумма: {self.cost}, доступная сумма: {self.budget}")
+        return (f"""Недостаточно средств для бронирования "{self.rentable_name}"."""
+                f" Необходимая сумма: {self.cost}, доступная сумма: {self.budget}")
 
 
 class FullReservationError(Exception):
